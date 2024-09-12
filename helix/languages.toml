@@ -1,0 +1,48 @@
+[[language]]
+name = "python"
+scope = "source.python"
+injection-regex = "python"
+file-types = ["py","pyi","py3","pyw",".pythonstartup",".pythonrc"]
+shebangs = ["python"]
+roots = [".", "pyproject.toml", "pyrightconfig.json"]
+comment-token = "#"
+language-servers = ["pyright", "ruff"]
+indent = { tab-width = 4, unit = "    " }
+auto-format = true
+
+[language.formatter]
+command = "black"
+args = [
+  "-",
+  "--quiet",
+  "--line-length=88"
+]
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+
+[language-server.pyright.config]
+reportMissingTypeStubs = false
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+autoImportCompletions = true
+
+[language-server.ruff]
+command = "ruff-lsp"
+
+[language-server.ruff.config]
+settings = {args = []}
+
+[[language]]
+name = "markdown"
+language-servers = [{ name = "harper-ls"}]
+soft-wrap.enable = true
+soft-wrap.wrap-indicator = ""
+# scope = "source.markdown"
+file-types = ["md", "txt" ]
+
+[language-server.harper-ls]
+command = "/usr/local/bin/harper-ls"
+args = ["-s"]
