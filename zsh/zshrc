@@ -1,6 +1,6 @@
 source ~/.quantumrc
 export EDITOR=nvim
-export PAGER=bat
+export PAGER='bat --theme ansi'
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -49,6 +49,7 @@ alias gp='git pull'
 alias gs='git st'
 alias gl='git lg'
 
+alias bat='bat --theme ansi'
 alias k='kubectl'
 
 # DR specific stuff
