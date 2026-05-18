@@ -1,0 +1,8 @@
+#:schema https://jj-vcs.github.io/jj/latest/config-schema.json
+
+[user]
+name = "jeffesp"
+email = "jeff@todayisthursday.net"
+
+[ui]
+default-command = "status"
